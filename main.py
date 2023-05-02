@@ -9,3 +9,9 @@ shorten_urls = {}
 def generate_short_url(length=6):
     chars = string.ascii_letters + string.digits
     short_url = "".join(random.choice(chars) for _ in range(length))
+    return short_url
+
+@app.route("/", methods=["GET", "POST"]):
+def index():
+    if request.method == "POST":
+        long_url = request.form["long_url"]
