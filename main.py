@@ -22,3 +22,11 @@ def index():
         shortened_urls[short_url] = long_url
         return f"Shortened URL: {request.url_root}{short_url}"
     return render_template("index.html")
+
+@app.route("/<short_url>")
+def redirect_url():
+    long_url = shortened_urls.get(short_url)
+    if long_url:
+        return redirect(long_url)
+    else:
+        return "URL not found", 404
