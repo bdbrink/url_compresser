@@ -30,3 +30,6 @@ def redirect_url():
         return redirect(long_url)
     else:
         return "URL not found", 404
+
+if __name__ == "__main__":
+    app.run(debug=True)
