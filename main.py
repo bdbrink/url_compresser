@@ -4,7 +4,7 @@ import string
 from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
-shorten_urls = {}
+shortened_urls = {}
 
 
 def generate_short_url(length=6):
@@ -27,7 +27,7 @@ def index():
 
 
 @app.route("/<short_url>")
-def redirect_url():
+def redirect_url(short_url):
     long_url = shortened_urls.get(short_url)
     if long_url:
         return redirect(long_url)
