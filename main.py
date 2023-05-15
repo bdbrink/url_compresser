@@ -13,7 +13,7 @@ def generate_short_url(length=6):
     return short_url
 
 
-@app.route("/", methods=["GET", "POST"]):
+@app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         long_url = request.form["long_url"]
