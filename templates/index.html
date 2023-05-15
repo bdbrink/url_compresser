@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1> URL Shortener</h1>
-    <form method="POST" actions="{{ url_for(index)}}">
+    <form method="POST" actions="{{ url_for('index') }}">
         <input type="text" name="long_url" placeholder="Enter the long URL">
         <button type="submit">Shorten</button>
     </form> 
